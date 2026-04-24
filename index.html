@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mert Şengün — Bilgisayar Mühendisi</title>
+  <meta name="description" content="Mert Şengün kişisel portfolio sitesi. Web geliştirme, Android uygulama geliştirme ve yapay zeka projeleri." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ── Navbar ── -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#hero">Mert Şengün</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" data-i18n="nav.about">Hakkımda</a></li>
+      <li><a href="#skills" data-i18n="nav.skills">Beceriler</a></li>
+      <li><a href="#projects" data-i18n="nav.projects">Projeler</a></li>
+      <li><a href="#services" data-i18n="nav.services">Hizmetler</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">İletişim</a></li>
+    </ul>
+    <div class="nav-controls">
+      <button id="langToggle" class="nav-ctrl-btn">EN</button>
+      <button id="themeToggle" class="nav-ctrl-btn" aria-label="Tema">🌙</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <h1 class="hero-name"><span data-i18n="hero.greeting">Merhaba, ben</span><br><span class="accent">Mert Şengün</span></h1>
+      <p class="hero-role" data-i18n="hero.role">Web · Mobil · Yapay Zeka</p>
+      <p class="hero-desc" data-i18n="hero.desc">
+        Kullanıcı dostu web uygulamaları, Android uygulamaları ve yapay zeka destekli projeler geliştiriyorum. Fikirlerinizi yazılıma dönüştürmek için buradayım.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projects" data-i18n="hero.btn.projects">Projelerimi Gör</a>
+        <a class="btn btn-outline" href="#contact" data-i18n="hero.btn.contact">İletişime Geç</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-photo-wrap">
+        <img src="photo.jpeg" alt="Mert Şengün" class="hero-photo" />
+        <div class="hero-photo-badge" data-i18n="hero.badge">Bilgisayar Mühendisi</div>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-num">4+</span>
+          <span class="hero-stat-label" data-i18n="hero.stat.projects">Proje</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">Web</span>
+          <span class="hero-stat-label" data-i18n="hero.stat.web">Geliştirme</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">Mobil</span>
+          <span class="hero-stat-label" data-i18n="hero.stat.mobile">Android</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">AI</span>
+          <span class="hero-stat-label" data-i18n="hero.stat.ai">Yapay Zeka</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Hakkımda ── -->
+<section id="about">
+  <div class="section-inner">
+    <p class="section-label" data-i18n="about.label">Hakkımda</p>
+    <h2 class="section-title" data-i18n="about.title">Kim Olduğumu Biraz Anlatayım</h2>
+
+    <div class="about-grid">
+      <div class="about-text fade-up">
+        <p data-i18n="about.p1">Muğla Sıtkı Koçman Üniversitesi Bilgisayar Mühendisliği bölümü öğrencisiyim. Web geliştirme, mobil uygulama ve yapay zeka alanlarında projeler üretmeyi seviyorum.</p>
+        <p data-i18n="about.p2">Eğitimim boyunca hem akademik hem de kişisel projelerle geniş bir teknik altyapı oluşturdum. Algoritmaları görselleştiren bir platform geliştirmekten Q-Learning ile oyun oynayan bir yapay zeka yazmaya kadar pek çok farklı problem üzerinde çalıştım.</p>
+        <p data-i18n="about.p3">Bir projeniz varsa ya da teknik danışmanlık istiyorsanız, birlikte çalışmaktan memnuniyet duyarım.</p>
+      </div>
+
+      <div class="about-highlights">
+        <div class="highlight-card fade-up">
+          <div class="hc-icon">🎓</div>
+          <div class="hc-body">
+            <h4 data-i18n="about.card1.title">Bilgisayar Mühendisliği</h4>
+            <p data-i18n="about.card1.desc">Muğla Sıtkı Koçman Üniversitesi — Yazılım, AI ve Mobil Geliştirme odaklı müfredat</p>
+          </div>
+        </div>
+        <div class="highlight-card fade-up">
+          <div class="hc-icon">💻</div>
+          <div class="hc-body">
+            <h4 data-i18n="about.card2.title">Full Stack Web Geliştirme</h4>
+            <p data-i18n="about.card2.desc">HTML, CSS, JavaScript ile frontend; Node.js ve Express.js ile backend projeleri</p>
+          </div>
+        </div>
+        <div class="highlight-card fade-up">
+          <div class="hc-icon">📱</div>
+          <div class="hc-body">
+            <h4 data-i18n="about.card3.title">Android Geliştirme</h4>
+            <p data-i18n="about.card3.desc">Java ile Android SDK üzerinde uygulama geliştirme, özel adaptörler ve UI tasarımı</p>
+          </div>
+        </div>
+        <div class="highlight-card fade-up">
+          <div class="hc-icon">🤖</div>
+          <div class="hc-body">
+            <h4 data-i18n="about.card4.title">Yapay Zeka &amp; ML</h4>
+            <p data-i18n="about.card4.desc">Python ile pekiştirmeli öğrenme (Q-Learning), optimizasyon ve arama algoritmaları</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Beceriler ── -->
+<section id="skills">
+  <div class="section-inner">
+    <p class="section-label" data-i18n="skills.label">Beceriler</p>
+    <h2 class="section-title" data-i18n="skills.title">Teknik Yetkinliklerim</h2>
+    <p class="section-desc" data-i18n="skills.desc">Çalıştığım teknolojiler ve araçlar — kategorilere göre.</p>
+
+    <div class="skills-grid">
+      <div class="skill-category fade-up">
+        <h3 data-i18n="skills.cat.frontend">Frontend</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">HTML5</span>
+          <span class="skill-tag">CSS3</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">Responsive Design</span>
+          <span class="skill-tag">DOM Manipulation</span>
+        </div>
+      </div>
+      <div class="skill-category fade-up">
+        <h3 data-i18n="skills.cat.backend">Backend</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">Express.js</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Go (Golang)</span>
+          <span class="skill-tag">REST API</span>
+          <span class="skill-tag">Async Programming</span>
+        </div>
+      </div>
+      <div class="skill-category fade-up">
+        <h3 data-i18n="skills.cat.mobile">Mobil</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Android (Java)</span>
+          <span class="skill-tag">Android SDK</span>
+          <span class="skill-tag">Gradle</span>
+          <span class="skill-tag">Custom Adapters</span>
+        </div>
+      </div>
+      <div class="skill-category fade-up">
+        <h3 data-i18n="skills.cat.ai">Yapay Zeka &amp; ML</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Q-Learning</span>
+          <span class="skill-tag">Reinforcement Learning</span>
+          <span class="skill-tag">Pygame</span>
+          <span class="skill-tag" data-i18n-tag="skills.tag.search">Arama Algoritmaları</span>
+          <span class="skill-tag">CSP</span>
+        </div>
+      </div>
+      <div class="skill-category fade-up">
+        <h3 data-i18n="skills.cat.db">Veritabanı</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag" data-i18n-tag="skills.tag.dbdesign">Veritabanı Tasarımı</span>
+          <span class="skill-tag">LocalStorage</span>
+        </div>
+      </div>
+      <div class="skill-category fade-up">
+        <h3 data-i18n="skills.cat.tools">Araçlar &amp; Diğer</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">GitHub</span>
+          <span class="skill-tag">Fetch API</span>
+          <span class="skill-tag" data-i18n-tag="skills.tag.ds">Veri Yapıları</span>
+          <span class="skill-tag" data-i18n-tag="skills.tag.algo">Algoritmalar</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Projeler ── -->
+<section id="projects">
+  <div class="section-inner">
+    <p class="section-label" data-i18n="projects.label">Projeler</p>
+    <h2 class="section-title" data-i18n="projects.title">Öne Çıkan Çalışmalarım</h2>
+    <p class="section-desc" data-i18n="projects.desc">Geliştirdiğim projelerin bir kısmı — farklı alanlarda üretilmiş gerçek uygulamalar.</p>
+
+    <div class="projects-grid">
+      <div class="project-card fade-up">
+        <div class="project-preview preview-algotube">
+          <div class="preview-bars"><span></span><span></span><span></span><span></span><span></span></div>
+        </div>
+        <h3>AlgoTube</h3>
+        <p data-i18n="projects.algotube.desc">Sıralama ve arama algoritmalarını gerçek zamanlı animasyonlarla görselleştiren interaktif eğitim platformu. Big O karmaşıklık analizi ve adım adım görselleştirme içerir.</p>
+        <div class="project-tags">
+          <span class="project-tag">HTML5</span>
+          <span class="project-tag">CSS3</span>
+          <span class="project-tag">JavaScript</span>
+          <span class="project-tag" data-i18n-tag="tag.animation">Animasyon</span>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <div class="project-preview preview-cargo">
+          <div class="preview-ship">🚢</div>
+        </div>
+        <h3>MuglaCargo</h3>
+        <p data-i18n="projects.cargo.desc">Kargo ve lojistik yönetim platformu. Yeni sevkiyat oluşturma, admin paneli, filo yönetimi (gemi &amp; kamyon), konteyner takibi ve fiyatlandırma modüllerini içerir.</p>
+        <div class="project-tags">
+          <span class="project-tag">HTML/CSS/JS</span>
+          <span class="project-tag">LocalStorage</span>
+          <span class="project-tag">Admin Panel</span>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <div class="project-preview preview-snake">
+          <div class="preview-grid"></div>
+        </div>
+        <h3>Snake AI</h3>
+        <p data-i18n="projects.snake.desc">Q-Learning pekiştirmeli öğrenme algoritması ile kendi kendine oynayan Snake oyunu. Epsilon-greedy keşif stratejisi, Manhattan mesafe tabanlı durum temsili ve kalıcı Q-tablo depolaması içerir.</p>
+        <div class="project-tags">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">Pygame</span>
+          <span class="project-tag">Q-Learning</span>
+          <span class="project-tag">AI</span>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <div class="project-preview preview-tobacco">
+          <div class="preview-db">🗄️</div>
+        </div>
+        <h3>Tobacco Survey DB</h3>
+        <p data-i18n="projects.tobacco.desc">Hindistan'daki tütün kullanım anket verilerini yöneten tam yığın veritabanı uygulaması. Ham CSV verilerini 3NF'e normalize eder; Go REST API ile veri sorgulama ve CRUD arayüzü sunar.</p>
+        <div class="project-tags">
+          <span class="project-tag">Go</span>
+          <span class="project-tag">MySQL</span>
+          <span class="project-tag">HTML/CSS/JS</span>
+          <span class="project-tag">REST API</span>
+          <span class="project-tag">3NF</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Hizmetler ── -->
+<section id="services">
+  <div class="section-inner">
+    <p class="section-label" data-i18n="services.label">Hizmetler</p>
+    <h2 class="section-title" data-i18n="services.title">Size Nasıl Yardımcı Olabilirim?</h2>
+    <p class="section-desc" data-i18n="services.desc">Freelance olarak çalışabileceğim alanlar. Bir projeniz varsa, konuşalım.</p>
+
+    <div class="services-grid">
+      <div class="service-card fade-up">
+        <div class="service-icon">🌐</div>
+        <h3 data-i18n="services.web.title">Web Sitesi Geliştirme</h3>
+        <p data-i18n="services.web.desc">Kurumsal veya kişisel web sitesi, landing page, portfolyo ve web uygulaması geliştirme.</p>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon">📱</div>
+        <h3 data-i18n="services.mobile.title">Android Uygulama Geliştirme</h3>
+        <p data-i18n="services.mobile.desc">Java ile Android SDK kullanarak özel mobil uygulamalar geliştirme ve yayınlama.</p>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon">🧮</div>
+        <h3 data-i18n="services.algo.title">Algoritma Danışmanlığı</h3>
+        <p data-i18n="services.algo.desc">Veri yapıları, algoritma tasarımı, karmaşıklık analizi ve kod optimizasyonu konularında destek.</p>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon">🤖</div>
+        <h3 data-i18n="services.ai.title">Yapay Zeka &amp; ML Projeleri</h3>
+        <p data-i18n="services.ai.desc">Python ile pekiştirmeli öğrenme, arama algoritmaları ve AI tabanlı proje geliştirme.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── İletişim ── -->
+<section id="contact">
+  <div class="section-inner">
+    <p class="section-label" data-i18n="contact.label">İletişim</p>
+    <h2 class="section-title" data-i18n="contact.title">Birlikte Çalışalım</h2>
+    <p class="section-desc" data-i18n="contact.desc">Bir projeniz veya sorunuz mu var? Formu doldurun, size en kısa sürede döneceğim.</p>
+
+    <div class="contact-grid">
+      <div class="contact-info fade-up">
+        <div class="contact-item">
+          <div class="contact-item-icon">✉️</div>
+          <div class="contact-item-text">
+            <h4 data-i18n="contact.email">E-posta</h4>
+            <a href="mailto:mertsengun09@gmail.com">mertsengun09@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">💼</div>
+          <div class="contact-item-text">
+            <h4 data-i18n="contact.linkedin">LinkedIn</h4>
+            <a href="https://linkedin.com/in/merttsengun" id="linkedinLink" target="_blank" rel="noopener">linkedin.com/in/merttsengun</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">🐙</div>
+          <div class="contact-item-text">
+            <h4>GitHub</h4>
+            <a href="https://github.com/merttsengun" target="_blank" rel="noopener">github.com/merttsengun</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📍</div>
+          <div class="contact-item-text">
+            <h4 data-i18n="contact.location">Konum</h4>
+            <span data-i18n="contact.location.val">Muğla, Türkiye</span>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form fade-up" id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname" data-i18n="contact.fname.label">Adınız</label>
+            <input type="text" id="fname" name="name" data-i18n-placeholder="contact.fname.placeholder" placeholder="Adınız Soyadınız" required />
+          </div>
+          <div class="form-group">
+            <label for="femail" data-i18n="contact.femail.label">E-posta</label>
+            <input type="email" id="femail" name="email" data-i18n-placeholder="contact.femail.placeholder" placeholder="ornek@email.com" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="fsubject" data-i18n="contact.fsubject.label">Konu</label>
+          <input type="text" id="fsubject" name="subject" data-i18n-placeholder="contact.fsubject.placeholder" placeholder="Proje hakkında bilgi almak istiyorum" />
+        </div>
+        <div class="form-group">
+          <label for="fmessage" data-i18n="contact.fmessage.label">Mesajınız</label>
+          <textarea id="fmessage" name="message" rows="5" data-i18n-placeholder="contact.fmessage.placeholder" placeholder="Projenizi veya sorunuzu kısaca anlatın..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" id="submitBtn" data-i18n="contact.submit">Mesaj Gönder →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-inner">
+    <span data-i18n="footer.rights">© 2026 Mert Şengün. Tüm hakları saklıdır.</span>
+    <div style="display:flex;gap:16px;">
+      <a href="mailto:mertsengun09@gmail.com" data-i18n="contact.email">E-posta</a>
+      <a href="https://linkedin.com/in/merttsengun" id="linkedinFooter" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/merttsengun" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
