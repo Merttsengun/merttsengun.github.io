@@ -519,6 +519,7 @@ section { padding: 88px 24px; }
   justify-content: center;
   font-size: 1.1rem;
   flex-shrink: 0;
+  color: var(--text);
 }
 
 .contact-item-text h4 { font-size: .9rem; font-weight: 600; margin-bottom: 2px; }
@@ -614,6 +615,15 @@ html.dark {
   --accent-hover: #3b82f6;
 }
 
+html.dark .contact-item-icon {
+  background: #1e293b;
+  color: #f1f5f9;
+}
+
+html.dark .location-icon {
+  filter: invert(1);
+}
+
 html.dark nav { background: rgba(15,23,42,.92); }
 
 html.dark #hero {
@@ -630,10 +640,14 @@ html.dark .skill-tag { background: #1e293b; }
 
 html.dark .skill-tag:hover { background: #1e3a5f; }
 
-html.dark .preview-algotube { background: linear-gradient(135deg, #1e3a5f, #1e40af44); }
-html.dark .preview-cargo    { background: linear-gradient(135deg, #14532d, #16653644); }
-html.dark .preview-snake    { background: linear-gradient(135deg, #2e1065, #4c1d9544); }
-html.dark .preview-tobacco  { background: linear-gradient(135deg, #451a03, #92400e44); }
+html.dark .preview-algotube    { background: linear-gradient(135deg, #1e3a5f, #1e40af44); }
+html.dark .preview-cargo       { background: linear-gradient(135deg, #14532d, #16653644); }
+html.dark .preview-snake       { background: linear-gradient(135deg, #2e1065, #4c1d9544); }
+html.dark .preview-tobacco     { background: linear-gradient(135deg, #451a03, #92400e44); }
+html.dark .preview-flyticket   { background: linear-gradient(135deg, #0c4a6e, #0369a144); }
+html.dark .preview-adversarial { background: linear-gradient(135deg, #500724, #9f123744); }
+html.dark .preview-dejaview    { background: linear-gradient(135deg, #14532d, #16653644); }
+html.dark .preview-travelogue  { background: linear-gradient(135deg, #431407, #9a3a1244); }
 
 html.dark footer { background: #020617; }
 
@@ -658,10 +672,14 @@ html.dark .service-card { background: #1e293b; }
   overflow: hidden;
 }
 
-.preview-algotube { background: linear-gradient(135deg, #dbeafe, #bfdbfe); }
-.preview-cargo    { background: linear-gradient(135deg, #dcfce7, #bbf7d0); }
-.preview-snake    { background: linear-gradient(135deg, #ede9fe, #ddd6fe); }
-.preview-tobacco  { background: linear-gradient(135deg, #fef3c7, #fde68a); }
+.preview-algotube    { background: linear-gradient(135deg, #dbeafe, #bfdbfe); }
+.preview-cargo       { background: linear-gradient(135deg, #dcfce7, #bbf7d0); }
+.preview-snake       { background: linear-gradient(135deg, #ede9fe, #ddd6fe); }
+.preview-tobacco     { background: linear-gradient(135deg, #fef3c7, #fde68a); }
+.preview-flyticket   { background: linear-gradient(135deg, #e0f2fe, #bae6fd); }
+.preview-adversarial { background: linear-gradient(135deg, #fce7f3, #fbcfe8); }
+.preview-dejaview    { background: linear-gradient(135deg, #f0fdf4, #bbf7d0); }
+.preview-travelogue  { background: linear-gradient(135deg, #fff7ed, #fed7aa); }
 
 /* AlgoTube — animating bars */
 .preview-bars {
@@ -712,6 +730,83 @@ html.dark .service-card { background: #1e293b; }
 .project-card > h3,
 .project-card > p,
 .project-card > .project-tags { padding: 0 24px; }
+
+/* ── Mini UI Previews ── */
+
+.pv-wrap {
+  width: 100%; height: 100%; padding: 12px 14px;
+  box-sizing: border-box;
+  display: flex; flex-direction: column; justify-content: center; gap: 6px;
+}
+
+/* MuglaCargo */
+.cargo-row { display: flex; align-items: center; gap: 7px; background: rgba(255,255,255,.45); border-radius: 5px; padding: 5px 8px; }
+.cargo-dot  { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.cargo-dot.green  { background: #22c55e; }
+.cargo-dot.yellow { background: #f59e0b; }
+.cargo-dot.gray   { background: #9ca3af; }
+.cargo-label { font-size: 9px; color: #374151; white-space: nowrap; }
+html.dark .cargo-row  { background: rgba(255,255,255,.08); }
+html.dark .cargo-label { color: #d1d5db; }
+
+/* Snake AI */
+.pv-snake { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; position: relative; }
+.pv-snake::before {
+  content: ''; position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(139,92,246,.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139,92,246,.15) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+.snake-grid {
+  display: grid; grid-template-columns: repeat(5, 16px); grid-template-rows: repeat(4, 16px);
+  gap: 2px; position: relative; z-index: 1;
+}
+.snake-seg  { background: #7c3aed; border-radius: 3px; }
+.snake-head { background: #a855f7; border-radius: 4px; box-shadow: 0 0 6px #a855f7aa; }
+.snake-food { background: #f43f5e; border-radius: 50%; box-shadow: 0 0 5px #f43f5eaa; }
+
+/* Tobacco DB */
+.db-row { display: flex; gap: 5px; }
+.db-cell { height: 11px; border-radius: 3px; background: rgba(255,255,255,.55); }
+.db-cell.hd { background: rgba(245,158,11,.4); }
+html.dark .db-cell    { background: rgba(255,255,255,.12); }
+html.dark .db-cell.hd { background: rgba(245,158,11,.3); }
+
+/* FlyTicket */
+.ft-route { font-size: 11px; font-weight: 700; color: #0369a1; text-align: center; letter-spacing: 1px; margin-bottom: 4px; }
+.ft-seats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
+.ft-s { height: 13px; border-radius: 3px; background: rgba(255,255,255,.5); border: 1px solid rgba(0,0,0,.08); }
+.ft-s.ok  { background: #86efac; }
+.ft-s.sel { background: #3b82f6; }
+.ft-s.emp { background: rgba(255,255,255,.2); }
+html.dark .ft-route { color: #7dd3fc; }
+html.dark .ft-s     { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.1); }
+html.dark .ft-s.ok  { background: #166534; }
+html.dark .ft-s.sel { background: #1d4ed8; }
+
+/* Adversarial ML */
+.adv-row  { display: flex; align-items: center; gap: 6px; }
+.adv-lbl  { font-size: 9px; width: 32px; color: #6b7280; flex-shrink: 0; }
+.adv-bar  { height: 12px; border-radius: 4px; }
+.adv-bad  { background: #f87171; }
+.adv-good { background: #4ade80; }
+.adv-pct  { font-size: 9px; font-weight: 700; color: #374151; flex-shrink: 0; }
+html.dark .adv-lbl { color: #9ca3af; }
+html.dark .adv-pct { color: #d1d5db; }
+
+/* DejaView */
+.pv-dj { display: flex; gap: 14px; align-items: center; justify-content: center; width: 100%; height: 100%; }
+.dj-group { display: flex; flex-wrap: wrap; gap: 5px; width: 42px; justify-content: center; }
+.dj-group i { width: 11px; height: 11px; border-radius: 50%; background: var(--gc); opacity: .85; display: block; }
+
+/* Travelogue */
+.tl-card { display: flex; align-items: center; gap: 7px; background: rgba(255,255,255,.55); border-radius: 6px; padding: 5px 9px; font-size: 10px; }
+.tl-card.tl-goal { background: rgba(255,255,255,.25); border: 1px dashed rgba(0,0,0,.15); }
+.tl-card-text { color: #374151; font-weight: 600; }
+html.dark .tl-card      { background: rgba(255,255,255,.1); }
+html.dark .tl-card.tl-goal { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.15); }
+html.dark .tl-card-text { color: #d1d5db; }
 
 .project-card > h3 { margin-top: 20px; }
 .project-card > p  { margin-top: 10px; flex: 1; }
