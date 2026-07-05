@@ -616,9 +616,12 @@ html.dark {
 }
 
 html.dark .contact-item-icon {
-  background: #1e293b;
+  background: #334155;
   color: #f1f5f9;
 }
+
+.github-path { fill: #1e293b; }
+html.dark .github-path { fill: #f1f5f9; }
 
 html.dark .location-icon {
   filter: invert(1);
@@ -734,7 +737,7 @@ html.dark .service-card { background: #1e293b; }
 /* ── Mini UI Previews ── */
 
 .pv-wrap {
-  width: 100%; height: 100%; padding: 12px 14px;
+  width: 100%; height: 130px; padding: 12px 14px;
   box-sizing: border-box;
   display: flex; flex-direction: column; justify-content: center; gap: 6px;
 }
@@ -750,7 +753,7 @@ html.dark .cargo-row  { background: rgba(255,255,255,.08); }
 html.dark .cargo-label { color: #d1d5db; }
 
 /* Snake AI */
-.pv-snake { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; position: relative; }
+.pv-snake { width: 100%; height: 130px; display: flex; align-items: center; justify-content: center; position: relative; }
 .pv-snake::before {
   content: ''; position: absolute; inset: 0;
   background-image:
@@ -796,7 +799,7 @@ html.dark .adv-lbl { color: #9ca3af; }
 html.dark .adv-pct { color: #d1d5db; }
 
 /* DejaView */
-.pv-dj { display: flex; gap: 14px; align-items: center; justify-content: center; width: 100%; height: 100%; }
+.pv-dj { display: flex; gap: 14px; align-items: center; justify-content: center; width: 100%; height: 130px; }
 .dj-group { display: flex; flex-wrap: wrap; gap: 5px; width: 42px; justify-content: center; }
 .dj-group i { width: 11px; height: 11px; border-radius: 50%; background: var(--gc); opacity: .85; display: block; }
 
@@ -814,6 +817,14 @@ html.dark .tl-card-text { color: #d1d5db; }
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
+  .projects-grid { grid-template-columns: 1fr; }
+
+  .project-preview { height: 120px; min-height: 120px; }
+  .pv-wrap  { height: 120px; }
+  .pv-snake { height: 120px; }
+  .pv-dj    { height: 120px; }
+
+
   .nav-links {
     display: none;
     position: absolute;
