@@ -643,14 +643,25 @@ html.dark .skill-tag { background: #1e293b; }
 
 html.dark .skill-tag:hover { background: #1e3a5f; }
 
-html.dark .preview-algotube    { background: linear-gradient(135deg, #1e3a5f, #1e40af44); }
-html.dark .preview-cargo       { background: linear-gradient(135deg, #14532d, #16653644); }
-html.dark .preview-snake       { background: linear-gradient(135deg, #2e1065, #4c1d9544); }
-html.dark .preview-tobacco     { background: linear-gradient(135deg, #451a03, #92400e44); }
-html.dark .preview-flyticket   { background: linear-gradient(135deg, #0c4a6e, #0369a144); }
-html.dark .preview-adversarial { background: linear-gradient(135deg, #500724, #9f123744); }
-html.dark .preview-dejaview    { background: linear-gradient(135deg, #14532d, #16653644); }
-html.dark .preview-travelogue  { background: linear-gradient(135deg, #431407, #9a3a1244); }
+html.dark .preview-algotube,
+html.dark .preview-cargo,
+html.dark .preview-snake,
+html.dark .preview-tobacco,
+html.dark .preview-flyticket,
+html.dark .preview-adversarial,
+html.dark .preview-dejaview,
+html.dark .preview-travelogue {
+  background-size: cover;
+  background-position: center;
+}
+html.dark .preview-algotube    { background-image: url('images/previews/algotube.webp'); }
+html.dark .preview-cargo       { background-image: url('images/previews/cargo.webp'); }
+html.dark .preview-snake       { background-image: url('images/previews/snake.webp'); }
+html.dark .preview-tobacco     { background-image: url('images/previews/tobacco.webp'); }
+html.dark .preview-flyticket   { background-image: url('images/previews/flyticket.webp'); }
+html.dark .preview-adversarial { background-image: url('images/previews/adversarial.webp'); }
+html.dark .preview-dejaview    { background-image: url('images/previews/dejaview.webp'); }
+html.dark .preview-travelogue  { background-image: url('images/previews/travelogue.webp'); }
 
 html.dark footer { background: #020617; }
 
@@ -683,6 +694,56 @@ html.dark .service-card { background: #1e293b; }
 .preview-adversarial { background: linear-gradient(135deg, #fce7f3, #fbcfe8); }
 .preview-dejaview    { background: linear-gradient(135deg, #f0fdf4, #bbf7d0); }
 .preview-travelogue  { background: linear-gradient(135deg, #fff7ed, #fed7aa); }
+
+/* AvrupaOto — real client project, full uncropped square photo */
+a.project-card.avrupaoto {
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #f5820c;
+  cursor: pointer;
+}
+.avrupaoto .project-preview {
+  background-image: url('images/previews/avrupaoto.webp');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.avrupaoto .live-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #f5820c;
+  color: #fff;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.35);
+}
+.avrupaoto h3 { display: flex; align-items: center; gap: 6px; }
+.avrupaoto h3 .ext-icon { color: var(--muted); font-size: .85rem; font-weight: 500; }
+
+.preview-algotube,
+.preview-cargo,
+.preview-snake,
+.preview-tobacco,
+.preview-flyticket,
+.preview-adversarial,
+.preview-dejaview,
+.preview-travelogue {
+  background-size: cover;
+  background-position: center;
+}
+.preview-algotube    { background-image: url('images/previews/algotube.webp'); }
+.preview-cargo       { background-image: url('images/previews/cargo.webp'); }
+.preview-snake       { background-image: url('images/previews/snake.webp'); }
+.preview-tobacco     { background-image: url('images/previews/tobacco.webp'); }
+.preview-flyticket   { background-image: url('images/previews/flyticket.webp'); }
+.preview-adversarial { background-image: url('images/previews/adversarial.webp'); }
+.preview-dejaview    { background-image: url('images/previews/dejaview.webp'); }
+.preview-travelogue  { background-image: url('images/previews/travelogue.webp'); }
 
 /* AlgoTube — animating bars */
 .preview-bars {
