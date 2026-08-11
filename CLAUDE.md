@@ -3,7 +3,7 @@
 ## Proje Hakkında
 
 Mert Şengün'ün kişisel portfolio web sitesi. Saf HTML/CSS/JS ile yazılmış, framework bağımlılığı yok.
-Canlı adres: **https://merttsengun.github.io**
+Canlı adres: **https://mertsengun.com** (GitHub Pages üzerinden özel domain ile yayında; `merttsengun.github.io` deploy hedefi olarak kalıyor ama kullanıcıya gösterilen adres bu değil)
 
 ## Dosya Yapısı
 
@@ -36,12 +36,18 @@ Local'de `git update-index --skip-worktree config.js` ile gerçek değer korunuy
 
 ## Deploy Akışı
 
+**Gerçek canlı adres (https://mertsengun.com) manuel FTP ile güncelleniyor** — `git push` bu adresi etkilemiyor.
+
+`.github/workflows/deploy.yml` sadece `merttsengun.github.io` adresine (kullanılmayan bir ayna/yedek) deploy ediyor:
+
 ```
 git push → GitHub Actions tetiklenir
          → config.js'e secret enjekte edilir
          → GitHub Pages'e deploy edilir
-         → https://merttsengun.github.io güncellenir
+         → https://merttsengun.github.io güncellenir (mertsengun.com DEĞİL)
 ```
+
+mertsengun.com'da değişiklik görmek için dosyaları FTP ile ilgili hosting'e elle yüklemek gerekiyor.
 
 ## Yeni Bölüm veya Metin Eklerken
 
