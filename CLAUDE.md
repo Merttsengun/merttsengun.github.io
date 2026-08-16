@@ -3,7 +3,7 @@
 ## Proje Hakkında
 
 Mert Şengün'ün kişisel portfolio web sitesi. Saf HTML/CSS/JS ile yazılmış, framework bağımlılığı yok.
-Canlı adres: **https://mertsengun.com** (GitHub Pages üzerinden özel domain ile yayında; `merttsengun.github.io` deploy hedefi olarak kalıyor ama kullanıcıya gösterilen adres bu değil)
+Canlı adres: **https://mertsengun.com** — Mert'in kendi VPS'inde (Coolify ile) barındırılıyor, nginx (Dockerfile) üzerinden statik olarak sunuluyor. Bu VPS tek bir projeye özel değil, birden fazla proje barındırıyor (bkz. `sunucu-kontrol` skill'i).
 
 ## Dosya Yapısı
 
@@ -11,10 +11,11 @@ Canlı adres: **https://mertsengun.com** (GitHub Pages üzerinden özel domain i
 index.html                        — Tek sayfalık site, tüm bölümler burada
 style.css                         — Tüm stiller, CSS custom properties ile tema sistemi
 script.js                         — Dark mode, dil geçişi, animasyonlar, Formspree formu
-config.js                         — Formspree URL (repoda placeholder, local'de gerçek değer)
+config.js                         — Formspree URL (repoda placeholder, build sırasında enjekte edilir)
 photo.jpeg                        — Profil fotoğrafı
+Dockerfile                        — nginx:alpine tabanlı build, config.js enjeksiyonu ve nginx.conf kopyalama
+nginx.conf                        — www → non-www 301 yönlendirmesi + statik dosya sunumu
 .gitignore                        — (boş — photo ve config artık repoda)
-.github/workflows/deploy.yml      — GitHub Actions deploy workflow'u
 README.md                         — Proje açıklaması
 CLAUDE.md                         — Bu dosya
 ```
@@ -29,25 +30,27 @@ CLAUDE.md                         — Bu dosya
 
 ## Gizli Bilgi Yönetimi (config.js)
 
-`config.js` repoda **placeholder** değerle duruyor (`BURAYA_FORM_ID`).
-Gerçek Formspree form ID'si GitHub Secret olarak saklanıyor (`FORMSPREE_URL`).
-GitHub Actions deploy sırasında `sed` ile placeholder → gerçek değer olarak değiştiriliyor.
+`config.js` repoda **placeholder** değerle duruyor (`BURAYA_FORM_ID`, tam hâli `https://formspree.io/f/BURAYA_FORM_ID` — yani sadece form ID'si placeholder, URL'in geri kalanı sabit).
+Gerçek Formspree form ID'si Coolify'da **build-time environment variable** olarak saklanıyor (`FORMSPREE_URL`, değeri sadece ID — örn. `mdaybwkj`, tam URL değil).
+Docker build sırasında (`Dockerfile` içindeki `ARG FORMSPREE_URL` + `sed`) placeholder → gerçek ID olarak değiştiriliyor.
 Local'de `git update-index --skip-worktree config.js` ile gerçek değer korunuyor, git görmüyor.
 
 ## Deploy Akışı
 
-**Gerçek canlı adres (https://mertsengun.com) manuel FTP ile güncelleniyor** — `git push` bu adresi etkilemiyor.
-
-`.github/workflows/deploy.yml` sadece `merttsengun.github.io` adresine (kullanılmayan bir ayna/yedek) deploy ediyor:
+Site Mert'in VPS'inde Coolify (self-hosted PaaS) ile barındırılıyor. Deploy tamamen `git push` ile otomatik:
 
 ```
-git push → GitHub Actions tetiklenir
-         → config.js'e secret enjekte edilir
-         → GitHub Pages'e deploy edilir
-         → https://merttsengun.github.io güncellenir (mertsengun.com DEĞİL)
+git push → Coolify webhook tetiklenir (GitHub App entegrasyonu üzerinden)
+         → Dockerfile ile image build edilir (nginx:alpine + config.js enjeksiyonu)
+         → yeni container ayağa kalkar, Traefik (Coolify'ın proxy'si) trafiği ona yönlendirir
+         → https://mertsengun.com ve https://www.mertsengun.com güncellenir
 ```
 
-mertsengun.com'da değişiklik görmek için dosyaları FTP ile ilgili hosting'e elle yüklemek gerekiyor.
+`www.mertsengun.com` → `mertsengun.com` yönlendirmesi **nginx seviyesinde** (`nginx.conf`) yapılıyor, Coolify/Traefik'in kendi "redirect www" özelliği kullanılmıyor (o özellikte bilinen bir bug var — regex replacement'ı bozuk geliyor ve 502'ye sebep oluyor).
+
+Coolify panelinde resource: proje adı `mertsengun`, uygulama adı `merttsengun.github.io:master-...`. Build pack: **Dockerfile**, port: **80**.
+
+DNS Cloudflare üzerinden yönetiliyor (kayıt Veridyen'de duruyor, nameserver'lar Cloudflare'e yönlendirilmiş). Tüm kayıtlar "DNS only" (proxy kapalı) — Coolify kendi Let's Encrypt sertifikasını çıkarıyor.
 
 ## Yeni Bölüm veya Metin Eklerken
 
@@ -81,4 +84,4 @@ mertsengun.com'da değişiklik görmek için dosyaları FTP ile ilgili hosting'e
 ## Test
 
 Bağımlılık yok — `index.html` tarayıcıda direkt açılır. VS Code Live Server önerilir.
-Canlı test için `git push` yeterli, GitHub Actions otomatik deploy eder (~20 saniye).
+Canlı test için `git push` yeterli, Coolify webhook'u yakalayıp otomatik build+deploy eder (~30-60 saniye).
