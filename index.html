@@ -39,43 +39,22 @@
 <section id="hero">
   <div class="hero-inner">
     <div class="hero-content">
-      <h1 class="hero-name"><span data-i18n="hero.greeting">Merhaba, Ben</span><br><span class="accent">Mert Şengün</span></h1>
+      <h1 class="hero-name"><span data-i18n="hero.greeting">Merhaba, Ben</span><span class="accent">Mert Şengün</span></h1>
       <p class="hero-role" data-i18n="hero.role">Web · Mobil · Yapay Zeka</p>
       <p class="hero-desc" data-i18n="hero.desc">
         Kullanıcı dostu web uygulamaları, Android uygulamaları ve yapay zeka destekli projeler geliştiriyorum. Fikirlerinizi yazılıma dönüştürmek için buradayım.
       </p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#projects" data-i18n="hero.btn.projects">Projelerimi Gör</a>
-        <a class="btn btn-outline" href="#contact" data-i18n="hero.btn.contact">İletişime Geç</a>
+        <a class="hero-link" href="#contact" data-i18n="hero.btn.contact">İletişime geç →</a>
       </div>
     </div>
 
     <div class="hero-visual">
       <div class="hero-photo-wrap">
         <img src="photo.jpeg" alt="Mert Şengün" class="hero-photo" />
-        <div class="hero-photo-badge" data-i18n="hero.badge">Bilgisayar Mühendisi</div>
       </div>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <span class="hero-stat-num">4+</span>
-          <span class="hero-stat-label" data-i18n="hero.stat.projects">Proje</span>
-        </div>
-        <div class="hero-stat-divider"></div>
-        <div class="hero-stat">
-          <span class="hero-stat-num">Web</span>
-          <span class="hero-stat-label" data-i18n="hero.stat.web">Geliştirme</span>
-        </div>
-        <div class="hero-stat-divider"></div>
-        <div class="hero-stat">
-          <span class="hero-stat-num">Mobil</span>
-          <span class="hero-stat-label" data-i18n="hero.stat.mobile">Android</span>
-        </div>
-        <div class="hero-stat-divider"></div>
-        <div class="hero-stat">
-          <span class="hero-stat-num">AI</span>
-          <span class="hero-stat-label" data-i18n="hero.stat.ai">Yapay Zeka</span>
-        </div>
-      </div>
+      <p class="hero-photo-caption" data-i18n="hero.badge">Bilgisayar Mühendisi</p>
     </div>
   </div>
 </section>
@@ -95,28 +74,36 @@
 
       <div class="about-highlights">
         <div class="highlight-card fade-up">
-          <div class="hc-icon">🎓</div>
+          <div class="hc-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.1 2.7 2 6 2s6-.9 6-2v-5"/></svg>
+          </div>
           <div class="hc-body">
             <h4 data-i18n="about.card1.title">Bilgisayar Mühendisliği</h4>
             <p data-i18n="about.card1.desc">Muğla Sıtkı Koçman Üniversitesi — Yazılım, AI ve Mobil Geliştirme odaklı müfredat</p>
           </div>
         </div>
         <div class="highlight-card fade-up">
-          <div class="hc-icon">💻</div>
+          <div class="hc-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
           <div class="hc-body">
             <h4 data-i18n="about.card2.title">Full Stack Web Geliştirme</h4>
             <p data-i18n="about.card2.desc">HTML, CSS, JavaScript ile frontend; Node.js ve Express.js ile backend projeleri</p>
           </div>
         </div>
         <div class="highlight-card fade-up">
-          <div class="hc-icon">📱</div>
+          <div class="hc-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg>
+          </div>
           <div class="hc-body">
             <h4 data-i18n="about.card3.title">Android Geliştirme</h4>
             <p data-i18n="about.card3.desc">Java ile Android SDK üzerinde uygulama geliştirme, özel adaptörler ve UI tasarımı</p>
           </div>
         </div>
         <div class="highlight-card fade-up">
-          <div class="hc-icon">🤖</div>
+          <div class="hc-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg>
+          </div>
           <div class="hc-body">
             <h4 data-i18n="about.card4.title">Yapay Zeka &amp; ML</h4>
             <p data-i18n="about.card4.desc">Python ile pekiştirmeli öğrenme (Q-Learning), optimizasyon ve arama algoritmaları</p>
@@ -323,37 +310,46 @@
     <h2 class="section-title" data-i18n="services.title">Size Nasıl Yardımcı Olabilirim?</h2>
     <p class="section-desc" data-i18n="services.desc">Freelance olarak çalışabileceğim alanlar. Bir projeniz varsa, konuşalım.</p>
 
-    <div class="services-grid">
-      <div class="service-card fade-up">
-        <div class="service-icon">🌐</div>
-        <h3 data-i18n="services.web.title">Web Sitesi Geliştirme</h3>
-        <p data-i18n="services.web.desc">Kurumsal veya kişisel web sitesi, landing page, portfolyo ve web uygulaması geliştirme.</p>
-      </div>
-      <div class="service-card fade-up">
-        <div class="service-icon">📱</div>
-        <h3 data-i18n="services.mobile.title">Android Uygulama Geliştirme</h3>
-        <p data-i18n="services.mobile.desc">Java ile Android SDK kullanarak özel mobil uygulamalar geliştirme ve yayınlama.</p>
-      </div>
-      <div class="service-card fade-up">
-        <div class="service-icon">🧮</div>
-        <h3 data-i18n="services.algo.title">Algoritma Danışmanlığı</h3>
-        <p data-i18n="services.algo.desc">Veri yapıları, algoritma tasarımı, karmaşıklık analizi ve kod optimizasyonu konularında destek.</p>
-      </div>
-      <div class="service-card fade-up">
-        <div class="service-icon">🤖</div>
-        <h3 data-i18n="services.ai.title">Yapay Zeka &amp; ML Projeleri</h3>
-        <p data-i18n="services.ai.desc">Python ile pekiştirmeli öğrenme, arama algoritmaları ve AI tabanlı proje geliştirme.</p>
-      </div>
-    </div>
+    <ol class="services-list">
+      <li class="service-item fade-up">
+        <span class="service-num">01</span>
+        <div class="service-item-body">
+          <h3 data-i18n="services.web.title">Web Sitesi Geliştirme</h3>
+          <p data-i18n="services.web.desc">Kurumsal veya kişisel web sitesi, landing page, portfolyo ve web uygulaması geliştirme.</p>
+        </div>
+      </li>
+      <li class="service-item fade-up">
+        <span class="service-num">02</span>
+        <div class="service-item-body">
+          <h3 data-i18n="services.mobile.title">Android Uygulama Geliştirme</h3>
+          <p data-i18n="services.mobile.desc">Java ile Android SDK kullanarak özel mobil uygulamalar geliştirme ve yayınlama.</p>
+        </div>
+      </li>
+      <li class="service-item fade-up">
+        <span class="service-num">03</span>
+        <div class="service-item-body">
+          <h3 data-i18n="services.algo.title">Algoritma Danışmanlığı</h3>
+          <p data-i18n="services.algo.desc">Veri yapıları, algoritma tasarımı, karmaşıklık analizi ve kod optimizasyonu konularında destek.</p>
+        </div>
+      </li>
+      <li class="service-item fade-up">
+        <span class="service-num">04</span>
+        <div class="service-item-body">
+          <h3 data-i18n="services.ai.title">Yapay Zeka &amp; ML Projeleri</h3>
+          <p data-i18n="services.ai.desc">Python ile pekiştirmeli öğrenme, arama algoritmaları ve AI tabanlı proje geliştirme.</p>
+        </div>
+      </li>
+    </ol>
   </div>
 </section>
 
 <!-- ── İletişim ── -->
 <section id="contact">
   <div class="section-inner">
-    <p class="section-label" data-i18n="contact.label">İletişim</p>
-    <h2 class="section-title" data-i18n="contact.title">Birlikte Çalışalım</h2>
-    <p class="section-desc" data-i18n="contact.desc">Bir projeniz veya sorunuz mu var? Formu doldurun, size en kısa sürede döneceğim.</p>
+    <div class="contact-lede">
+      <h2 class="contact-lede-title" data-i18n="contact.title">Birlikte çalışalım.</h2>
+      <p class="contact-lede-desc" data-i18n="contact.desc">Bir projeniz veya sorunuz mu var? Formu doldurun, size en kısa sürede döneceğim.</p>
+    </div>
 
     <div class="contact-grid">
       <div class="contact-info fade-up">
