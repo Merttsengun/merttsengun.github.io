@@ -650,20 +650,21 @@ html.dark .form-group textarea {
 .preview-dejaview    { background: linear-gradient(135deg, #f0fdf4, #bbf7d0); }
 .preview-travelogue  { background: linear-gradient(135deg, #fff7ed, #fed7aa); }
 
-/* AvrupaOto — real client project, full uncropped square photo */
-a.project-card.avrupaoto {
+/* Live client projects (AvrupaOto, Taş Güler Ören) — orange = real/live */
+a.project-card.live-project {
   text-decoration: none;
   color: inherit;
   border: 1px solid #f5820c;
   cursor: pointer;
 }
-.avrupaoto .project-preview {
-  background-image: url('images/previews/avrupaoto.webp');
+.live-project .project-preview {
   background-size: cover;
   background-position: center;
   position: relative;
 }
-.avrupaoto .live-badge {
+.avrupaoto .project-preview     { background-image: url('images/previews/avrupaoto.webp'); }
+.tasguleroren .project-preview  { background-image: url('images/previews/tasguleroren.webp'); }
+.live-project .live-badge {
   position: absolute;
   top: 12px;
   left: 12px;
@@ -677,8 +678,8 @@ a.project-card.avrupaoto {
   border-radius: 999px;
   box-shadow: 0 2px 6px rgba(0,0,0,.35);
 }
-.avrupaoto h3 { display: flex; align-items: center; gap: 6px; }
-.avrupaoto h3 .ext-icon { color: var(--muted); font-size: .85rem; font-weight: 500; }
+.live-project h3 { display: flex; align-items: center; gap: 6px; }
+.live-project h3 .ext-icon { color: var(--muted); font-size: .85rem; font-weight: 500; }
 
 .preview-algotube,
 .preview-cargo,
