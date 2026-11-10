@@ -12,9 +12,10 @@
   h1 { font-size: 1.6rem; margin: 0 0 4px; color: var(--accent); }
   h2 { font-size: 1.15rem; margin: 28px 0 6px; }
   p, li { color: var(--fg); }
+  ul { padding-left: 1.2em; }
+  a { color: var(--accent); }
   .date { color: var(--muted); margin: 0 0 24px; }
   hr { border: 0; border-top: 1px solid var(--line); margin: 48px 0; }
-  nav a { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -23,60 +24,132 @@
 
 <section id="tr" lang="tr">
 <h1>Debut Football — Gizlilik Politikası</h1>
-<p class="date">Son güncelleme: 9 Kasım 2026</p>
+<p class="date">Son güncelleme: 10 Kasım 2026</p>
 
 <p>Bu politika, MSGames tarafından geliştirilen <strong>Debut Football</strong> (Android, paket adı <code>com.msgames.debutfootball</code>) oyununu kapsar.</p>
 
+<h2>Kısaca</h2>
+<ul>
+  <li>Hesap açman gerekmez. Adını, e-postanı, telefon numaranı, rehberini, fotoğraflarını veya tam konumunu almayız.</li>
+  <li>Oyunu geliştirmek için oyunun nasıl oynandığına dair anonim kullanım verileri ve çökme raporları toplarız (Google Firebase ile).</li>
+  <li>Verilerini satmayız.</li>
+</ul>
+
 <h2>Topladığımız veriler</h2>
-<p>Hiçbir kişisel veri toplamıyoruz. Oyun hesap açmanı istemez; adını, e-postanı, konumunu, rehberini, fotoğraflarını veya cihaz kimliğini almaz.</p>
+<p><strong>Kullanım verileri (Google Analytics for Firebase).</strong> Oyunun hangi bölümlerinin oynandığını, oyuncuların nerede zorlandığını ve oyunu ne zaman bıraktığını anlamak için:</p>
+<ul>
+  <li>Oyun içi olaylar: açılan ekranlar, öğretici adımları, maç anlarının sonucu (ör. şut, pas, gol), maç notu ve skor, sezon sonu özeti, transferler, oyun içi parayla yapılan alışverişler ve oyun içi şans oyunları. Bunlar oyundaki kurgusal kariyerine aittir.</li>
+  <li>Kullanım bilgisi: oturum sayısı ve süresi, ilk açılış tarihi.</li>
+  <li>Cihaz bilgisi: telefon modeli, Android sürümü, dil, ekran çözünürlüğü, IP adresinden tahmin edilen yaklaşık ülke/şehir.</li>
+  <li>Tanımlayıcılar: Firebase'in uygulama kurulumuna verdiği rastgele bir kimlik ve Android reklam kimliği. Reklam kimliğini telefonunun ayarlarından sıfırlayabilir veya silebilirsin.</li>
+</ul>
+<p>Oyuncu karakterine verdiğin ad ve soyad bu verilere eklenmez.</p>
+<p><strong>Çökme raporları (Firebase Crashlytics).</strong> Oyun çöktüğünde veya bir hata oluştuğunda: hatanın teknik ayrıntısı, zamanı, cihaz modeli ve durumu (ör. boş bellek), rastgele bir kurulum kimliği.</p>
+<p><strong>Uzaktan ayarlar (Firebase Remote Config).</strong> Oyun dengesi ayarlarını güncelleme yayınlamadan değiştirebilmek için oyun açılışta güncel ayarları indirir. Bunun için rastgele kurulum kimliği kullanılır.</p>
+
+<h2>Verileri nasıl kullanırız</h2>
+<p>Yalnızca oyunu geliştirmek için: zorluğu ve dengeyi ayarlamak, hataları bulmak, kullanılmayan bölümleri iyileştirmek. Verileri reklam hedeflemesi için kullanmıyoruz. Veriler toplu olarak (ör. "oyuncuların %40'ı ikinci gün döndü") incelenir.</p>
+
+<h2>Kimlerle paylaşılır</h2>
+<p>Veriler, hizmeti bizim adımıza sağlayan Google (Firebase) sunucularında işlenir; bu sunucular Türkiye dışında olabilir. Google'ın verileri nasıl işlediği: <a href="https://firebase.google.com/support/privacy">Firebase gizlilik ve güvenlik</a>, <a href="https://policies.google.com/privacy">Google Gizlilik Politikası</a>. Verilerini satmayız ve başka üçüncü taraflarla paylaşmayız.</p>
+
+<h2>Saklama süresi</h2>
+<p>Kullanım verileri Google Analytics'te ayarlanan süre boyunca (en fazla 14 ay) ayrıntılı olarak saklanır, sonra yalnız toplu sayılar kalır. Çökme raporları yaklaşık 90 gün saklanır.</p>
 
 <h2>Oyun kaydı</h2>
-<p>Kariyer ilerlemen yalnızca kendi telefonunda saklanır. Bu kayıt bize veya başka birine gönderilmez. Oyunu silersen kayıt da silinir.</p>
+<p>Kariyer ilerlemen yalnızca kendi telefonunda saklanır, bize gönderilmez. Oyunu silersen kayıt da silinir.</p>
 
-<h2>Reklam, analiz ve üçüncü taraflar</h2>
-<p>Oyunda reklam, analiz (istatistik) aracı veya uygulama içi satın alma yoktur. Verilerini üçüncü taraflarla paylaşmayız veya satmayız.</p>
+<h2>Bildirimler</h2>
+<p>Oyun ileride hatırlatma bildirimleri gönderebilir. Bunlar telefonunda oluşturulur, bir sunucudan gelmez ve veri göndermez. Android 13 ve üstünde bildirim için önce izin istenir; izni istediğin zaman telefon ayarlarından kapatabilirsin.</p>
 
 <h2>İzinler</h2>
-<p>Oyun internet bağlantısı olmadan oynanır. Android paketinde oyun motorunun (Unity) eklediği internet izni bulunur; oyun bu izinle veri göndermez. Titreşim izni yalnızca vuruş hissi için kullanılır.</p>
+<ul>
+  <li>İnternet ve ağ durumu: kullanım verilerini, çökme raporlarını göndermek ve uzaktan ayarları almak için. Oyun internetsiz de oynanır.</li>
+  <li>Reklam kimliği: kullanım verileri aracı (Firebase) tarafından okunur.</li>
+  <li>Bildirim: yukarıdaki hatırlatmalar için.</li>
+  <li>Titreşim: yalnızca vuruş hissi için.</li>
+</ul>
+
+<h2>Reklam ve satın alma</h2>
+<p>Oyunda şu an reklam ve gerçek parayla satın alma yoktur. Eklenirse bu politika önceden güncellenir.</p>
+
+<h2>Hakların</h2>
+<p>KVKK ve GDPR kapsamında verilerine erişme, düzeltme ve silinmesini isteme hakkın vardır. Veri toplamayı durdurmak için oyunu silebilir, reklam kimliğini telefon ayarlarından sıfırlayabilirsin. Taleplerin için aşağıdaki adrese yaz; veriler adınla değil rastgele kimliklerle tutulduğu için hangi verinin sana ait olduğunu ayırt etmemiz sınırlı olabilir.</p>
 
 <h2>Çocuklar</h2>
-<p>Oyun 13 yaş altındaki çocuklara yönelik değildir. Hiçbir yaş grubundan kişisel veri toplanmaz.</p>
+<p>Oyun 13 yaş altındaki çocuklara yönelik değildir ve bilerek 13 yaş altındaki çocuklardan veri toplamayız.</p>
 
 <h2>Değişiklikler</h2>
 <p>Bu politika değişirse güncel hali bu sayfada, yeni tarihle yayınlanır.</p>
 
 <h2>İletişim</h2>
-<p>Sorularınız için: <a href="mailto:mertsengun09@gmail.com">mertsengun09@gmail.com</a></p>
+<p><a href="mailto:mertsengun09@gmail.com">mertsengun09@gmail.com</a></p>
 </section>
 
 <hr>
 
 <section id="en" lang="en">
 <h1>Debut Football — Privacy Policy</h1>
-<p class="date">Last updated: 9 November 2026</p>
+<p class="date">Last updated: 10 November 2026</p>
 
 <p>This policy covers <strong>Debut Football</strong> (Android, package name <code>com.msgames.debutfootball</code>), developed by MSGames.</p>
 
+<h2>In short</h2>
+<ul>
+  <li>No account is needed. We do not collect your name, email, phone number, contacts, photos or precise location.</li>
+  <li>To improve the game we collect anonymous usage data about how the game is played and crash reports (using Google Firebase).</li>
+  <li>We do not sell your data.</li>
+</ul>
+
 <h2>Data we collect</h2>
-<p>We do not collect any personal data. The game does not ask you to create an account and does not access your name, email, location, contacts, photos or device identifiers.</p>
+<p><strong>Usage data (Google Analytics for Firebase).</strong> To understand which parts of the game are played, where players struggle and when they stop playing:</p>
+<ul>
+  <li>In-game events: screens opened, tutorial steps, results of match moments (e.g. shot, pass, goal), match rating and score, end-of-season summary, transfers, purchases made with in-game currency and in-game games of chance. These describe your fictional in-game career.</li>
+  <li>Usage information: number and length of sessions, first open date.</li>
+  <li>Device information: phone model, Android version, language, screen resolution, approximate country/city estimated from the IP address.</li>
+  <li>Identifiers: a random ID that Firebase assigns to the app installation, and the Android advertising ID. You can reset or delete the advertising ID in your phone settings.</li>
+</ul>
+<p>The first and last name you give your in-game player are not included in this data.</p>
+<p><strong>Crash reports (Firebase Crashlytics).</strong> When the game crashes or an error occurs: technical details of the error, its time, device model and state (e.g. free memory), and a random installation ID.</p>
+<p><strong>Remote settings (Firebase Remote Config).</strong> The game downloads current balance settings on start so they can be adjusted without releasing an update. A random installation ID is used for this.</p>
+
+<h2>How we use the data</h2>
+<p>Only to improve the game: tuning difficulty and balance, finding bugs, improving parts that are not used. We do not use the data for ad targeting. Data is reviewed in aggregate (e.g. "40% of players returned on day two").</p>
+
+<h2>Who it is shared with</h2>
+<p>The data is processed on Google (Firebase) servers, which provide the service on our behalf; these servers may be outside your country. How Google processes data: <a href="https://firebase.google.com/support/privacy">Firebase privacy and security</a>, <a href="https://policies.google.com/privacy">Google Privacy Policy</a>. We do not sell your data or share it with other third parties.</p>
+
+<h2>Retention</h2>
+<p>Usage data is kept in detail for the period set in Google Analytics (at most 14 months); after that only aggregate counts remain. Crash reports are kept for about 90 days.</p>
 
 <h2>Game save</h2>
-<p>Your career progress is stored only on your own phone. It is not sent to us or anyone else. Uninstalling the game deletes the save.</p>
+<p>Your career progress is stored only on your own phone and is not sent to us. Uninstalling the game deletes the save.</p>
 
-<h2>Ads, analytics and third parties</h2>
-<p>The game contains no ads, no analytics tools and no in-app purchases. We do not share or sell your data to third parties.</p>
+<h2>Notifications</h2>
+<p>The game may send reminder notifications in the future. They are created on your phone, do not come from a server and do not send data. On Android 13 and above permission is requested first; you can turn it off any time in your phone settings.</p>
 
 <h2>Permissions</h2>
-<p>The game is played offline. The Android package includes an internet permission added by the game engine (Unity); the game does not send data using it. The vibration permission is used only for kick feedback.</p>
+<ul>
+  <li>Internet and network state: to send usage data and crash reports and to receive remote settings. The game can be played offline.</li>
+  <li>Advertising ID: read by the usage data tool (Firebase).</li>
+  <li>Notifications: for the reminders above.</li>
+  <li>Vibration: only for kick feedback.</li>
+</ul>
+
+<h2>Ads and purchases</h2>
+<p>The game currently has no ads and no real-money purchases. If they are added, this policy will be updated beforehand.</p>
+
+<h2>Your rights</h2>
+<p>Under GDPR and Turkish data protection law (KVKK) you have the right to access, correct and request deletion of your data. To stop data collection you can uninstall the game and reset your advertising ID in your phone settings. Send requests to the address below; because data is kept under random IDs rather than your name, our ability to tell which data is yours may be limited.</p>
 
 <h2>Children</h2>
-<p>The game is not directed at children under 13. No personal data is collected from any age group.</p>
+<p>The game is not directed at children under 13 and we do not knowingly collect data from children under 13.</p>
 
 <h2>Changes</h2>
 <p>If this policy changes, the updated version will be published on this page with a new date.</p>
 
 <h2>Contact</h2>
-<p>Questions: <a href="mailto:mertsengun09@gmail.com">mertsengun09@gmail.com</a></p>
+<p><a href="mailto:mertsengun09@gmail.com">mertsengun09@gmail.com</a></p>
 </section>
 </main>
 </body>
